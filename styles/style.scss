@@ -3,12 +3,22 @@
     margin: 0;
 }
 
+header {
+    text-align: center;
+    margin-top: 45px;
+
+    button {
+        padding: 10px 15px;
+        margin: 20px;
+    }
+}
+
 .container {
     display: grid;
     height: 500px;
     width: 500px;
     border: 1px solid black;
-    margin: 220px auto;
+    margin: 100px auto;
 
     .grid-element {
         border: 1px solid black;
