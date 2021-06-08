@@ -4,7 +4,7 @@ A futuristic take on a classic toy. I was inspired to create this by The Odin Pr
 
 ### Hosted Link
 
-https://sc-martel93.github.io/Etch-A-Sketc/
+https://sc-martel93.github.io/Etch-A-Sketch/
 
 ### What did I use?
 
