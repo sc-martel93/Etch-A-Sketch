@@ -32,7 +32,21 @@ const clearBoard = () => {
     })
 }
 
-
-
 const clearButton = document.querySelector('#clear-btn')
 clearButton.addEventListener('click', () => clearBoard())
+
+const clearGrid = () => {
+    const gridArray = Array.from(container.childNodes)
+    gridArray.forEach((element) => {
+        container.removeChild(element)
+    })
+}
+
+const changeGridSize = () => {
+    let newSize = prompt("Enter size between 1 and 64")
+    clearGrid()
+    createGrid(newSize)
+}
+
+const changeSizeButton = document.querySelector('#size-btn')
+changeSizeButton.addEventListener('click', changeGridSize)
