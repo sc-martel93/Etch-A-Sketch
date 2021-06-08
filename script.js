@@ -44,8 +44,20 @@ const clearGrid = () => {
 
 const changeGridSize = () => {
     let newSize = prompt("Enter size between 1 and 64")
-    clearGrid()
-    createGrid(newSize)
+    
+    if (newSize !== null){
+        newSize = parseInt(newSize)
+        
+        if (newSize < 1 || newSize > 64 || Number.isNaN(newSize)){
+            alert("Enter a number between 1 and 64!")
+            changeGridSize()
+
+        } else {
+            clearGrid()
+            createGrid(newSize)
+        }
+    }
+    
 }
 
 const changeSizeButton = document.querySelector('#size-btn')
