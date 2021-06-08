@@ -2,11 +2,17 @@ const container = document.querySelector('.container')
 const INITIAL_GRID_SIZE = 16
 
 const changeColor = (pixel) => {
-    let randomR = Math.floor(Math.random() * 256)
-    let randomG = Math.floor(Math.random() * 256)
-    let randomB = Math.floor(Math.random() * 256)
-
-    pixel.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+    let color = pickColor()
+    if(color === 'black'){
+        pixel.style.backgroundColor = 'black'
+    } else {
+        let randomR = Math.floor(Math.random() * 256)
+        let randomG = Math.floor(Math.random() * 256)
+        let randomB = Math.floor(Math.random() * 256)
+    
+        pixel.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+    }
+   
 }
 
 const createGrid = (gridSize) => {
@@ -66,3 +72,13 @@ const changeGridSize = () => {
 
 const changeSizeButton = document.querySelector('#size-btn')
 changeSizeButton.addEventListener('click', changeGridSize)
+
+const pickColor = () => {
+    const colorForm = document.getElementsByName('color')
+    for(let i = 0; i < colorForm.length; i++){
+        if(colorForm[i].checked){
+           return colorForm[i].value
+        }
+    }
+}
+
