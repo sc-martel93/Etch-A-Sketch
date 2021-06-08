@@ -2,4 +2,17 @@
   padding: 0;
   margin: 0;
 }
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  height: 500px;
+  width: 750px;
+  border: 1px solid black;
+  margin: 220px auto;
+}
+
+.container .grid-element {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=style.css.map */
