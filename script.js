@@ -1,6 +1,11 @@
 let container = document.querySelector('.container')
 const INITIAL_GRID_SIZE = 16
 
+
+const changeColor = (pixel) => {
+    pixel.style.backgroundColor = 'black'
+}
+
 const createGrid = (gridSize) => {
     let gridArea = gridSize * gridSize
    
@@ -12,11 +17,11 @@ const createGrid = (gridSize) => {
         container.insertAdjacentElement('beforeend', gridElement)
     }
 
+    let gridPixels = document.querySelectorAll('.grid-element')
+    gridPixels.forEach((pixel) => {
+        pixel.addEventListener('mouseover', () => changeColor(pixel))
+    })
     
 }
 
 createGrid(INITIAL_GRID_SIZE)
-
-const changeColor = () => {
-    this.backgroundColor = 'black'
-}
