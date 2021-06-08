@@ -1,6 +1,5 @@
-let container = document.querySelector('.container')
+const container = document.querySelector('.container')
 const INITIAL_GRID_SIZE = 16
-
 
 const changeColor = (pixel) => {
     pixel.style.backgroundColor = 'black'
@@ -25,3 +24,15 @@ const createGrid = (gridSize) => {
 }
 
 createGrid(INITIAL_GRID_SIZE)
+
+const clearBoard = () => {
+    let gridPixels = document.querySelectorAll('.grid-element')
+    gridPixels.forEach((pixel) => {
+        pixel.style.backgroundColor = "white"
+    })
+}
+
+
+
+const clearButton = document.querySelector('#clear-btn')
+clearButton.addEventListener('click', () => clearBoard())
