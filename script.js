@@ -2,7 +2,11 @@ const container = document.querySelector('.container')
 const INITIAL_GRID_SIZE = 16
 
 const changeColor = (pixel) => {
-    pixel.style.backgroundColor = 'black'
+    let randomR = Math.floor(Math.random() * 256)
+    let randomG = Math.floor(Math.random() * 256)
+    let randomB = Math.floor(Math.random() * 256)
+
+    pixel.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
 }
 
 const createGrid = (gridSize) => {
@@ -44,7 +48,7 @@ const clearGrid = () => {
 
 const changeGridSize = () => {
     let newSize = prompt("Enter size between 1 and 64")
-    
+
     if (newSize !== null){
         newSize = parseInt(newSize)
         
